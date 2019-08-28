@@ -31,9 +31,9 @@ setup(
     test_suite='intelmq_webinput_csv.tests',
     packages=find_packages(),
     package_data={'intelmq_webinput_csv': [
-        '/etc/intelmq/webinput.conf',
-        'static',
-        'bin'
+        'etc/webinput.conf',
+        'static/*',
+        'bin/*'
     ]
     },
     include_package_data=True,
