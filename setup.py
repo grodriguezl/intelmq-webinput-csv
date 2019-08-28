@@ -19,11 +19,9 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as handle:
     README = handle.read().replace('<docs/',
                                    '<https://github.com/certat/intelmq-webinput-csv/blob/master/docs/')
     
-data = []
-for root, dirs, files in os.walk(os.path.dirname(__file__)):
-    for folder in dirs:
-        data.append(os.path.join(root, folder))
-
+folders = []
+for r, d, f in os.walk(os.path.join(os.path.dirname(__file__),'intelmq_webinput_csv')):
+    folders.append(r + '/*')
 
 setup(
     name='intelmq_webinput_csv',
@@ -36,12 +34,8 @@ setup(
         ],
     test_suite='intelmq_webinput_csv.tests',
     packages=find_packages(),
-    package_data={'intelmq_webinput_csv': [
-        'etc/webinput.conf',
-        'static/*',
-        'static/*/*',
-        'bin/*'
-    ]
+    package_data={
+        'intelmq_webinput_csv': folders
     },
     include_package_data=True,
     url='https://github.com/certat/intelmq_webinput_csv/',
