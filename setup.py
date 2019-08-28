@@ -39,7 +39,7 @@ setup(
     package_data={'intelmq_webinput_csv': [
         'etc/webinput.conf',
         'static/*',
-        'static/*/*'
+        'static/*/*',
         'bin/*'
     ]
     },
